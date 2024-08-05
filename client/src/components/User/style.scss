@@ -1,0 +1,61 @@
+.user {
+    border: 1px solid white;
+    border-radius: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        z-index: 2;
+    }
+    
+    .user-bar {
+        display: none;
+        position: absolute;
+        bottom: -25%;
+        right: 0;
+        width: max-content;
+        flex-direction: column;
+        border: 1px solid white;
+        border-radius: 5px;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    > .active {
+        display: flex;
+        animation: slideToBottom 0.3s forwards;
+    }
+
+    >.inactive {
+        display: flex;
+        animation: slideToTop 0.3s forwards;
+    }
+
+    @keyframes slideToBottom {
+        0% {
+            transform: translateY(80%);
+            visibility: visible;
+            display: flex;
+        }
+        100% {
+            transform: translateY(100%);
+        }
+    }
+
+    @keyframes slideToTop {
+        0% {
+            transform: translateY(100%);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateY(80%);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}

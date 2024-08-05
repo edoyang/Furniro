@@ -1,0 +1,32 @@
+.item{
+    display: grid;
+    grid-template-areas: 
+    "name price"
+    "id buttons";
+    grid-template-columns: 1fr 1fr;
+
+    .item-name{
+        grid-area: name;
+    }
+
+    .item-price{
+        grid-area: price;
+        text-align: right;
+    }
+
+    .item-id{
+        grid-area: id;
+    }
+
+    .buttons{
+        grid-area: buttons;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button{
+            padding: 0.25rem 0.5rem;
+            height: max-content;
+        }
+    }
+}

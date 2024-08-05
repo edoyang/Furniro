@@ -1,0 +1,16 @@
+.products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 1rem;
+
+    .product{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+}
