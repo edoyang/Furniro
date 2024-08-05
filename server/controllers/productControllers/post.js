@@ -34,7 +34,7 @@ exports.checkout = async (req, res) => {
           })),
           mode: 'payment',
           success_url: `${process.env.CLIENT_URL}/success`,
-          cancel_url: `${process.env.CLIENT_URL}/cancel`,          
+          cancel_url: `${process.env.CLIENT_URL}`,          
       });
 
       res.status(200).json({ id: session.id }); // Send session ID back to the client
