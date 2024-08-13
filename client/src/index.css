@@ -22,10 +22,15 @@
   --primary-color-dark: #a26f4f;
   --primary-color-light: #E89F7130;
   --soft-grey: #F4F5F7;
+  --primary-background: #FCF8F3;
 }
 
 iframe{
   display: none;
+}
+
+body{
+  overflow-x: hidden;
 }
 
 :root,
@@ -56,4 +61,16 @@ h1{
 
 section{
   margin-bottom: 3rem;
+}
+
+@keyframes loading {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }    
 }

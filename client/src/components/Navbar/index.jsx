@@ -43,7 +43,7 @@ const Navbar = () => {
 
         <div className="right">
 
-            <img src="wishlist" alt="wishlist" />
+            <img src="wish.svg" alt="wishlist" />
 
             <Cart />
 

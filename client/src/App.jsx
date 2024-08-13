@@ -7,6 +7,7 @@ import User from './components/User'
 import Checkout from './pages/Checkout'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
+import './App.scss'
 
 function App() {
 

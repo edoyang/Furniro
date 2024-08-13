@@ -6,7 +6,7 @@
         width: 100%;
         height: max-content;
         position: relative;
-        background-color: #FCF8F3;
+        background-color: var(--primary-background);
         color: white;
         height: 710px;
         align-items: end;
@@ -24,21 +24,9 @@
             width: 100%;
             height: 100%;
             z-index: 2;
-            animation: pulsate 3s infinite;
+            animation: loading 3s infinite;
             background: linear-gradient(90deg, #cacaca, #a3a3a3, #cacaca);
             background-size: 400% 400%;
-        }
-    
-        @keyframes pulsate {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }    
         }
 
         .slider-container{
@@ -163,6 +151,97 @@
 
         .shop-info-item{
             display: grid;
+        }
+    }
+
+    >.inspirations{
+        display: flex;
+        background-color: var(--primary-background);
+        padding: 3rem 2rem;
+        height: 700px;
+        justify-content: space-between;
+        align-items: center;
+
+        .slick-slider{
+            max-width: 60%;
+        }
+
+        .slick-slide{
+            padding: 0 2rem;
+
+            &:last-child{
+                display: none;
+            }
+        }
+
+        .slick-arrow{
+            width: max-content;
+            height: max-content;
+            z-index: 3;
+            
+            &::before{
+                color: var(--primary-color);
+                font-size: 50px;
+            }
+        }
+
+        .inspiration-item{
+            height: 450px;
+            max-width: 500px;
+            position: relative;
+            background-color: white;
+
+            .image-container{
+                height: 100%;
+                width: 100%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .inspiration-details{
+                position: absolute;
+                bottom: 2%;
+                left: 2.5%;
+                background-color: #FFFFFF95;
+                padding: 1rem;
+                color: black;
+                backdrop-filter: blur(5px);
+                min-width: 250px;
+                display: none;
+
+                >h1, >h4{
+                    font-family: GilroyBold;
+                }
+            }
+        }
+
+        .slick-current{
+            .inspiration-item{
+                height: 500px;
+            }
+            .inspiration-details{
+                display: block;
+            }
+        }
+        
+        .slick-dots{
+            bottom: 0;
+            left: 150px;
+
+            li button:before {
+                color: var(--primary-color-dark);
+            }
+
+            .slick-active button::before{
+                padding: 0.5px;
+                border-radius: 100%;
+                outline: 1px solid var(--primary-color);
+                color: var(--primary-color);
+            }
         }
     }
 }

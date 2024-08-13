@@ -1,4 +1,5 @@
 import Hero from '../../components/Hero';
+import Inspiration from '../../components/Inspiration';
 import Product from '../../components/Product'
 import Products from '../../components/Products';
 import './index.scss'
@@ -48,6 +49,10 @@ const Home = () => {
 
         <section>
             <Products />
+        </section>
+
+        <section className="inspirations">
+            <Inspiration />
         </section>
 
     </div>

@@ -1,0 +1,14 @@
+.slick-dots{
+    bottom: calc(100% + 10px);
+
+    li button:before {
+        color: var(--primary-color-dark);
+    }
+
+    .slick-active button::before{
+        padding: 0.5px;
+        border-radius: 100%;
+        outline: 1px solid var(--primary-color);
+        color: var(--primary-color);
+    }
+}
