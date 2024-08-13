@@ -1,16 +1,97 @@
 .products{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-content: space-between;
     gap: 1rem;
     width: 100%;
-    border: 1px solid #ccc;
-    padding: 1rem;
+    padding: 2rem;
 
     .product{
         display: flex;
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        width: 285px;
+        height: 450px;
+        position: relative;
+
+        .image-container{
+            height: 300px;
+            
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .product-details{
+            text-align-last: left;
+            height: 100%;
+            padding: 1rem;
+            background-color: var(--soft-grey);
+
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                z-index: 1;
+                transition: all 0.2s ease;
+            }
+
+            >button{
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                transform: translate(50%, -50%);
+                padding: 0.75rem 2rem;
+                z-index: 2;
+                cursor: pointer;
+                border: none;
+                color: var(--primary-color);
+                display: none;
+            }
+
+        }
+
+        &:hover{
+            .product-details{
+                
+                &::before{
+                    background-color: #00000099;
+                }
+
+                >button{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.products.loading{
+
+    span {
+        width: 285px;
+        height: 450px;
+        animation: pulsate 3s infinite;
+        background: linear-gradient(90deg, #cacaca, #a3a3a3, #cacaca);
+        background-size: 400% 400%;
+    }
+    
+    @keyframes pulsate {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }    
     }
 }

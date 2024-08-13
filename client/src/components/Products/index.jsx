@@ -4,6 +4,7 @@ import "./style.scss";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -13,9 +14,11 @@ const Products = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                setProducts(data);
+                setProducts(data.slice(0, 4));
             } catch (error) {
                 console.error('There was a problem with the fetch operation:', error);
+            } finally {
+                setLoading(false);
             }
         };
 
@@ -23,10 +26,16 @@ const Products = () => {
     }, []);
 
     return (
-        <div className="products">
-            {products.map(product => (
-                <Product key={product._id} Id={product.id} Name={product.name} Description={product.description} Price={product.price} />
-            ))}
+        <div className={`products ${loading ? 'loading' : ''}`}>
+            {loading ? (
+                <>
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </>
+            ) : (
+                products.map(product => (
+                    <Product key={product._id} Id={product.id} Name={product.name} Description={product.description} Price={product.price} />
+                ))
+            )}
         </div>
     );
 };

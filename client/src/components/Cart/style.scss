@@ -1,32 +1,76 @@
-.item{
-    display: grid;
-    grid-template-areas: 
-    "name price"
-    "id buttons";
-    grid-template-columns: 1fr 1fr;
+.cart{
+    position: relative;
+    z-index: 1;
 
-    .item-name{
-        grid-area: name;
-    }
+    .cart-items{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        flex-direction: column;
+        background-color: white;
+        padding: 1rem;
+        gap: 1rem;
+        
+        >p{
+            white-space: nowrap;
+        }
 
-    .item-price{
-        grid-area: price;
-        text-align: right;
-    }
+        .item{
+            display: grid;
+            grid-template-areas: 
+            "name price"
+            "id buttons";
+            grid-template-columns: 1fr 1fr;
+            width: max-content;
+        
+            .item-name{
+                grid-area: name;
+            }
+        
+            .item-price{
+                grid-area: price;
+                text-align: right;
+            }
 
-    .item-id{
-        grid-area: id;
-    }
-
-    .buttons{
-        grid-area: buttons;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
+            .item-qty{
+                text-align: right;
+            }
+        
+            .item-id{
+                grid-area: id;
+            }
+        }
         button{
             padding: 0.25rem 0.5rem;
+            white-space: nowrap;
             height: max-content;
         }
+    }
+
+    .cart-finalize{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button, >a{
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.8rem;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.active{
+    .cart-items{
+        display: flex;
     }
 }
