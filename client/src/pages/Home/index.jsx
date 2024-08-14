@@ -2,9 +2,36 @@ import Hero from '../../components/Hero';
 import Inspiration from '../../components/Inspiration';
 import Product from '../../components/Product'
 import Products from '../../components/Products';
+import Slider from '../../components/Slider';
 import './index.scss'
 
 const Home = () => {
+    const contentData = [
+        {
+            name: "How to create a living room to love",
+            date: "January 20, 2020",
+            image: "Picture1.png",
+            url:"/"
+        },
+        {
+            name: "Solution for clean look working space",
+            date: "January 10, 2020",
+            image: "Picture1.png",
+            url:"/"
+        },
+        {
+            name: "Make your cooking activity more fun with good setup",
+            date: "January 20, 2020",
+            image: "Picture1.png",
+            url:"/"
+        },
+        {
+            name: "Gaming setup that will make you stay at home",
+            date: "January 20, 2020",
+            image: "Picture1.png",
+            url:"/"
+        },
+    ];
 
 
   return (
@@ -53,6 +80,11 @@ const Home = () => {
 
         <section className="inspirations">
             <Inspiration />
+        </section>
+
+        <section className='tips-and-tricks'>
+            <h1>Tips and Tricks</h1>
+            <Slider content={contentData} />
         </section>
 
     </div>

@@ -1,6 +1,32 @@
 .home-page{
     background-color: #FFFFFF;
 
+    .slick-dots{
+        bottom: calc(100% + 10px);
+
+        li button:before {
+            color: var(--primary-color-dark);
+        }
+
+        .slick-active button::before{
+            padding: 0.5px;
+            border-radius: 100%;
+            outline: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+    }
+
+    .slick-arrow{
+        width: max-content;
+        height: max-content;
+        z-index: 3;
+        
+        &::before{
+            color: var(--primary-color);
+            font-size: 50px;
+        }
+    }
+
     .hero{
         display: flex;
         width: 100%;
@@ -60,21 +86,6 @@
                         transition: all 0.2s ease;
                     }
                 }
-            }
-        }
-
-        .slick-dots{
-            bottom: calc(100% + 10px);
-
-            li button:before {
-                color: var(--primary-color-dark);
-            }
-
-            .slick-active button::before{
-                padding: 0.5px;
-                border-radius: 100%;
-                outline: 1px solid var(--primary-color);
-                color: var(--primary-color);
             }
         }
 
@@ -174,17 +185,6 @@
             }
         }
 
-        .slick-arrow{
-            width: max-content;
-            height: max-content;
-            z-index: 3;
-            
-            &::before{
-                color: var(--primary-color);
-                font-size: 50px;
-            }
-        }
-
         .inspiration-item{
             height: 450px;
             max-width: 500px;
@@ -231,17 +231,30 @@
         .slick-dots{
             bottom: 0;
             left: 150px;
+        }
+    }
 
-            li button:before {
-                color: var(--primary-color-dark);
-            }
+    .tips-and-tricks{
+        padding: 0 5rem;
+        text-align: center;
 
-            .slick-active button::before{
-                padding: 0.5px;
-                border-radius: 100%;
-                outline: 1px solid var(--primary-color);
-                color: var(--primary-color);
+        >h1{
+            margin-bottom: 3rem;
+        }
+
+        .slick-slide{
+            padding: 1rem;
+
+            a{
+                text-decoration: none;
+                color: black;
+
+                padding: 1rem;
             }
+        }
+
+        .slick-current{
+            scale: 1.1;
         }
     }
 }
