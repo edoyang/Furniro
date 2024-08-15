@@ -1,13 +1,12 @@
 import { Routes, Route, Link } from 'react-router-dom'
-import Cart from './components/Cart'
 import Login from './components/Login'
-import Products from './components/Products'
 import Register from './components/Register'
 import User from './components/User'
 import Checkout from './pages/Checkout'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import './App.scss'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -21,6 +20,7 @@ function App() {
       <Route path="/user" element={<User />} />
       <Route path="/checkout" element={<Checkout />} />
     </Routes>
+    <Footer />
     </>
   )
 }
