@@ -3,4 +3,19 @@
     padding: 2rem;
     justify-content: space-between;
 
+    @media (max-width: 1000px){
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 2rem;
+        justify-content: space-between;
+    }
+
+    @media (max-width: 450px){
+        display: grid;
+        grid-template-columns: auto;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+
 }

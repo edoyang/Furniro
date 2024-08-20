@@ -29,10 +29,6 @@ iframe{
   display: none;
 }
 
-body{
-  overflow-x: hidden;
-}
-
 :root,
 body,
 *{

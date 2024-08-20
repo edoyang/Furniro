@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.scss'
 import { Link } from 'react-router-dom'
 import Cart from '../Cart'
 
 const Navbar = () => {
+    const [openNavbar, setOpenNavbar] = useState('')
+
+    const handleHamburger = () => {
+        setOpenNavbar(openNavbar === '' ? 'open' : '')
+    }
+
   return (
-    <div className='navbar'>
+    <div className={`navbar ${openNavbar}`}>
+
+        <div className='row'>
+            <input type="checkbox" name="hamburger" id="hamburger" />
+            <label onClick={handleHamburger} className="hamburger" htmlFor="hamburger">
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+            </label>
+        </div>
+
+
         <div className="left">
             <Link to="/"><h1 className="logo">Furniro</h1></Link>
 
@@ -30,15 +47,15 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div className="search-bar">
-                <label htmlFor="search">
-                    <img src="mirror.svg" alt="search" />
-                </label>
-                <input type="text" placeholder="Search for products" id='search' name='search' />
+        <div className="search-bar">
+            <label htmlFor="search">
+                <img src="mirror.svg" alt="search" />
+            </label>
+            <input type="text" placeholder="Search for products" id='search' name='search' />
 
-                <div className="search-result"></div>
-            </div>
+            <div className="search-result"></div>
         </div>
 
         <div className="right">

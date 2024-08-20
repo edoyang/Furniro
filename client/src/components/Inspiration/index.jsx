@@ -26,12 +26,6 @@ const Inspiration = () => {
             name: 'Living Room',
             tag: 'Nature',
             image: 'dummy4.png'
-        },
-        {
-            id: 5,
-            name: "",
-            tag: "",
-            image: 'dummy'
         }
     ];
 
@@ -42,7 +36,15 @@ const Inspiration = () => {
         slidesToScroll: 1,
         slidesToShow: 2,
         className: 'inspiration',
-    };
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                }
+            }
+        ]
+    };    
 
   return (
     <>
