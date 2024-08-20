@@ -7,6 +7,7 @@
     top: 0;
     z-index: 10;
     background-color: #FCF8F3;
+    position: sticky;
     
     &::before{
         content: "";
