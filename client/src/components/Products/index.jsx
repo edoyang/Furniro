@@ -14,7 +14,7 @@ const Products = () => {
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                setProducts(data.slice(0, 4));
+                setProducts(data.slice(0, 8));
             } catch (error) {
                 console.error('There was a problem with the fetch operation:', error);
             } finally {
