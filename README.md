@@ -160,8 +160,8 @@ VITE_API_URL= http://localhost:3000
 ## **API Documentation**
 
 - **Base URL**: `http://localhost:3000/products`
-- Recall all products (GET method)
-- Create product in mongodb based on this body request:
+  Recall all products (GET method)
+  Create product in mongodb based on this body request:
 
 ```bash
 
@@ -172,10 +172,10 @@ VITE_API_URL= http://localhost:3000
 ```
 
 - **Base URL**: `http://localhost:3000/products/:id`
-- Recall product by their id.
+  Recall product by their id.
 
 - **Base URL**: `http://localhost:3000/checkout`
-- Stripe checkout, please keep the code since it's automatically take the response from client
+  Stripe checkout, please keep the code since it's automatically take the response from client
 
 ---
 
